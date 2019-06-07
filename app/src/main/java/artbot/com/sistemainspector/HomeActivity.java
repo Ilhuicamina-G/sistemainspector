@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity
     private int request_code = 1;
     private String tittle = "Inicio";
 
-    private String NameUser, EmailUser;
+    private String NameUser, EmailUser, img;
     private int idUser;
     TextView TextViewNameUser, TextViewEmailUser;
     private ImageView imageViewUser;
@@ -101,6 +101,7 @@ public class HomeActivity extends AppCompatActivity
         Intent intent1 = getIntent();
         NameUser = intent1.getStringExtra("user");
         EmailUser = intent1.getStringExtra("email");
+        img = intent1.getStringExtra("img");
         idUser = intent1.getIntExtra("id", 0);
 
         scaner= (FloatingActionButton) findViewById(R.id.scanner);
@@ -158,7 +159,7 @@ public class HomeActivity extends AppCompatActivity
 
         TextViewNameUser.setText(NameUser);
         TextViewEmailUser.setText(EmailUser);
-        Picasso.get().load("http://yobusco.org/uploads/users/1.jpg").into(imageViewUser);
+        Picasso.get().load("http://yobusco.org/uploads/users/"+img).into(imageViewUser);
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
