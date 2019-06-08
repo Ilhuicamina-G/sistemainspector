@@ -112,7 +112,7 @@ public class ComercianteFragment extends Fragment  {
             jpegResult = getArguments().getString("jpeg","");
             pdfResult = getArguments().getString("pdf","");
 
-            //Toast.makeText(getContext(),coordenadasResult,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"hola"+ vigenciaResult,Toast.LENGTH_SHORT).show();
 
 
         }
@@ -128,10 +128,10 @@ public class ComercianteFragment extends Fragment  {
         showToolbar("",true, view);
 
         CircleImageView imageViewFotoComerciante = (CircleImageView) view.findViewById(R.id.imageViewFotoComerciante);
-        Picasso.get().load("http://yobusco.org/uploads/"+vigenciaResult+"/foto_dueno/"+imgResult+"").into(imageViewFotoComerciante);
+        Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/foto_dueno/"+imgResult+"").into(imageViewFotoComerciante);
 
         ImageView imagenestructura = (ImageView) view.findViewById(R.id.imagen_estructura);
-        Picasso.get().load("http://yobusco.org/uploads/"+vigenciaResult+"/estructura/"+imgResult+"").into(imagenestructura);
+        Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/estructura/"+imgResult+"").into(imagenestructura);
 
 
 
@@ -159,7 +159,7 @@ public class ComercianteFragment extends Fragment  {
         final ArrayList<Horas> Reports2 = new ArrayList<>();
         RequestQueue mQueue = Volley.newRequestQueue(getContext());
         String idC = String.valueOf(idResult);
-        String URL = "http://yobusco.org/android/horario.php?id="+idC;
+        String URL = "http://www.carmen.gob.mx/sistema-ambulante/estilos/android/horario.php?id="+idC;
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null,
 
 

@@ -121,7 +121,7 @@ public class PopScreenDialog extends DialogFragment {
             comentario = editText.getText().toString();
 
             if (!comentario.isEmpty()){
-                String URL = "http://yobusco.org/android/generateReport.php";
+                String URL = "http://www.carmen.gob.mx/sistema-ambulante/estilos/android/generateReport.php";
                 ejecutarServicio(URL);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

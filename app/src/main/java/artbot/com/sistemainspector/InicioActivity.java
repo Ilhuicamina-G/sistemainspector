@@ -14,6 +14,8 @@ public class InicioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
+        //comentario
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

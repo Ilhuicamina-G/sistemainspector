@@ -159,7 +159,7 @@ public class HomeActivity extends AppCompatActivity
 
         TextViewNameUser.setText(NameUser);
         TextViewEmailUser.setText(EmailUser);
-        Picasso.get().load("http://yobusco.org/uploads/users/"+img).into(imageViewUser);
+        Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/users/"+img).into(imageViewUser);
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
@@ -295,7 +295,7 @@ public class HomeActivity extends AppCompatActivity
                             startActivity(intent);
                         }else{
                             android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                            builder.setMessage("Error de inicio de sessión")
+                            builder.setMessage("Folio no encontrado")
                                     .setNegativeButton("Ok",null)
                                     .create().show();
                         }
@@ -413,13 +413,13 @@ public class HomeActivity extends AppCompatActivity
                         startActivity(intent);
                     }else{
                         android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                        builder.setMessage("Error de inicio de sessión")
+                        builder.setMessage("Folio no encontrado")
                                 .setNegativeButton("Ok",null)
                                 .create().show();
                     }
                 }catch (JSONException e){
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(),"Ingrese un correo valido",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Ingrese un correo valido"+ e.toString(),Toast.LENGTH_SHORT).show();
                 }
             }
         };
