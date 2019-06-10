@@ -160,8 +160,8 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                     }else{
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                        builder.setMessage("Error de inicio de sessión")
-                                .setNegativeButton("Retry",null)
+                        builder.setMessage("Correo o contraseña incorrecto")
+                                .setNegativeButton("Entendido",null)
                                 .create().show();
                     }
                 }catch (JSONException e){

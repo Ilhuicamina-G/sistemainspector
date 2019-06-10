@@ -583,7 +583,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                         comentario = editText.getText().toString();
                         if (!comentario.isEmpty()){
                             //Toast.makeText(getContext(),comentario+" "+ idResult+" "+ idUser + " " + NameUser,Toast.LENGTH_LONG).show();
-                            String URL = "http://yobusco.org/android/generateReport.php";
+                            String URL = "http://www.carmen.gob.mx/sistema-ambulante/estilos/android/generateReport.php";
                             ejecutarServicio(URL);
                         }else{
                             Toast.makeText(getContext(),"Ingrese un comentario",Toast.LENGTH_LONG).show();

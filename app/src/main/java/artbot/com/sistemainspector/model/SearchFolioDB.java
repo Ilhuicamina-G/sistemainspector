@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class SearchFolioDB extends StringRequest {
 
-    private static final String URL = "http://yobusco.org/android/scan.php";
+    private static final String URL = "http://www.carmen.gob.mx/sistema-ambulante/estilos/android/scan.php";
     private Map<String,String> params;
 
     public SearchFolioDB(String folio, Response.Listener<String> listener){

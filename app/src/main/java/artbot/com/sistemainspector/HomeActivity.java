@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity
     private int request_code = 1;
     private String tittle = "Inicio";
 
-    private String NameUser, EmailUser;
+    private String NameUser, EmailUser, img;
     private int idUser;
     TextView TextViewNameUser, TextViewEmailUser;
     private ImageView imageViewUser;
@@ -82,6 +82,9 @@ public class HomeActivity extends AppCompatActivity
     private String jpegResult = "";
     private String pdfResult = "";
 
+    private String formato1 = "";
+    private String formato2 = "";
+
 
     FloatingActionButton scaner;
     final private int REQUEST_CODE_ASK_PERMISSION=111;
@@ -101,6 +104,7 @@ public class HomeActivity extends AppCompatActivity
         Intent intent1 = getIntent();
         NameUser = intent1.getStringExtra("user");
         EmailUser = intent1.getStringExtra("email");
+        img = intent1.getStringExtra("img");
         idUser = intent1.getIntExtra("id", 0);
 
         scaner= (FloatingActionButton) findViewById(R.id.scanner);
@@ -158,7 +162,7 @@ public class HomeActivity extends AppCompatActivity
 
         TextViewNameUser.setText(NameUser);
         TextViewEmailUser.setText(EmailUser);
-        Picasso.get().load("http://yobusco.org/uploads/users/1.jpg").into(imageViewUser);
+        Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/users/"+img).into(imageViewUser);
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
@@ -254,6 +258,9 @@ public class HomeActivity extends AppCompatActivity
                             jpegResult = jsonResponse.getString("jpeg");
                             pdfResult = jsonResponse.getString("pdf");
 
+                            formato1 = jsonResponse.getString("formato1");
+                            formato2 = jsonResponse.getString("formato2");
+
 
 
                             Intent intent = new Intent(HomeActivity.this, ContainerActivity.class);
@@ -291,10 +298,13 @@ public class HomeActivity extends AppCompatActivity
                             intent.putExtra("jpeg",jpegResult);
                             intent.putExtra("pdf",pdfResult);
 
+                            intent.putExtra("formato1",formato1);
+                            intent.putExtra("formato2",formato2);
+
                             startActivity(intent);
                         }else{
                             android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                            builder.setMessage("Error de inicio de sessión")
+                            builder.setMessage("Folio no encontrado")
                                     .setNegativeButton("Ok",null)
                                     .create().show();
                         }
@@ -373,6 +383,10 @@ public class HomeActivity extends AppCompatActivity
                         pdfResult = jsonResponse.getString("pdf");
 
 
+                        formato1 = jsonResponse.getString("formato1");
+                        formato2 = jsonResponse.getString("formato2");
+
+
 
                         Intent intent = new Intent(HomeActivity.this, ContainerActivity.class);
 
@@ -409,16 +423,19 @@ public class HomeActivity extends AppCompatActivity
                         intent.putExtra("jpeg",jpegResult);
                         intent.putExtra("pdf",pdfResult);
 
+                        intent.putExtra("formato1",formato1);
+                        intent.putExtra("formato2",formato2);
+
                         startActivity(intent);
                     }else{
                         android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                        builder.setMessage("Error de inicio de sessión")
+                        builder.setMessage("Folio no encontrado")
                                 .setNegativeButton("Ok",null)
                                 .create().show();
                     }
                 }catch (JSONException e){
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(),"Ingrese un correo valido",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Ingrese un correo valido"+ e.toString(),Toast.LENGTH_SHORT).show();
                 }
             }
         };

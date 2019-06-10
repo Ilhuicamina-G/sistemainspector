@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class ReportRequest extends StringRequest {
 
-    private static final String URL = "http://yobusco.org/android/report.php";
+    private static final String URL = "http://www.carmen.gob.mx/sistema-ambulante/estilos/android/report.php";
     private Map<String,String> params;
 
     public ReportRequest(String id, Response.Listener<String> listener) {

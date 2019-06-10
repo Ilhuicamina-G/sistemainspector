@@ -597,14 +597,26 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_weight="0.8">
+                android:layout_weight="0.8"
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/imagen_estructura"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:layout_centerInParent="true"
-                    android:background="@drawable/comerciante200x200"/>
+                    android:background="@drawable/comerciante200x200"
+
+                    />
+
+                <Button
+                    android:id="@+id/descargarpdf"
+                    android:theme="@style/RaisedButtonDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descargar PDF"
+                    android:visibility="gone"
+                    />
 
             </RelativeLayout>
 

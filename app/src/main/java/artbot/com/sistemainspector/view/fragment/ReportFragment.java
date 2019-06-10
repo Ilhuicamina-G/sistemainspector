@@ -113,7 +113,7 @@ public class ReportFragment extends Fragment{
         final ArrayList<Report> Reports = new ArrayList<>();
         RequestQueue mQueue = Volley.newRequestQueue(getContext());
         String idC = String.valueOf(idResult);
-        String URL = "http://yobusco.org/android/report.php?id="+idC;
+        String URL = "http://www.carmen.gob.mx/sistema-ambulante/estilos/android/report.php?id="+idC;
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
