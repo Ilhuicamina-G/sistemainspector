@@ -94,8 +94,7 @@
                                     android:id="@+id/userEmail"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/email"
-                                    android:text="admin@carmen.gob.mx"/>
+                                    android:hint="@string/email"/>
 
                             </android.support.design.widget.TextInputLayout>
 
@@ -109,8 +108,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="@string/pass"
-                                    android:inputType="textPassword"
-                                    android:text="1234"/>
+                                    android:inputType="textPassword"/>
 
                             </android.support.design.widget.TextInputLayout>
                             <RadioButton
