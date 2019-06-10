@@ -1,4 +1,6 @@
 package artbot.com.sistemainspector.view.fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -69,6 +72,9 @@ public class ComercianteFragment extends Fragment  {
     private String jpegResult = "";
     private String pdfResult = "";
 
+    private String formato1 = "";
+    private String formato2 = "";
+
 
     private String fecha;
     private String desde;
@@ -112,7 +118,10 @@ public class ComercianteFragment extends Fragment  {
             jpegResult = getArguments().getString("jpeg","");
             pdfResult = getArguments().getString("pdf","");
 
-            Toast.makeText(getContext(),"hola"+ vigenciaResult,Toast.LENGTH_SHORT).show();
+            formato1 = getArguments().getString("formato1","");
+            formato2 = getArguments().getString("formato2","");
+
+            //Toast.makeText(getContext(),formato1 + " y " + formato2,Toast.LENGTH_SHORT).show();
 
 
         }
@@ -128,10 +137,38 @@ public class ComercianteFragment extends Fragment  {
         showToolbar("",true, view);
 
         CircleImageView imageViewFotoComerciante = (CircleImageView) view.findViewById(R.id.imageViewFotoComerciante);
-        Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/foto_dueno/"+imgResult+"").into(imageViewFotoComerciante);
-
         ImageView imagenestructura = (ImageView) view.findViewById(R.id.imagen_estructura);
-        Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/estructura/"+imgResult+"").into(imagenestructura);
+        Button buttonDescargar = (Button) view.findViewById(R.id.descargarpdf);
+
+        if (formato1.equals("jpg")){
+            Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/foto_dueno/"+imgResult+"").into(imageViewFotoComerciante);
+        }else if(formato1.equals("png")){
+            Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/foto_dueno/"+pngResult+"").into(imageViewFotoComerciante);
+        }else if(formato1.equals("jpeg")){
+            Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/foto_dueno/"+jpegResult+"").into(imageViewFotoComerciante);
+        }
+
+
+
+        if (formato2.equals("jpg")){
+            Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/estructura/"+imgResult+"").into(imagenestructura);
+        }else if(formato2.equals("png")){
+            Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/estructura/"+pngResult+"").into(imagenestructura);
+        }else if(formato2.equals("jpeg")){
+            Picasso.get().load("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/estructura/"+jpegResult+"").into(imagenestructura);
+        }else if(formato2.equals("pdf")){
+            //PDF
+            imagenestructura.setVisibility(View.GONE);
+
+            buttonDescargar.setVisibility(View.VISIBLE);
+
+            buttonDescargar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.carmen.gob.mx/sistema-ambulante/uploads/"+vigenciaResult+"/estructura/"+pdfResult+"")));
+                }
+            });
+        }
 
 
 

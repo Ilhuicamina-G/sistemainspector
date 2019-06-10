@@ -82,6 +82,9 @@ public class HomeActivity extends AppCompatActivity
     private String jpegResult = "";
     private String pdfResult = "";
 
+    private String formato1 = "";
+    private String formato2 = "";
+
 
     FloatingActionButton scaner;
     final private int REQUEST_CODE_ASK_PERMISSION=111;
@@ -255,6 +258,9 @@ public class HomeActivity extends AppCompatActivity
                             jpegResult = jsonResponse.getString("jpeg");
                             pdfResult = jsonResponse.getString("pdf");
 
+                            formato1 = jsonResponse.getString("formato1");
+                            formato2 = jsonResponse.getString("formato2");
+
 
 
                             Intent intent = new Intent(HomeActivity.this, ContainerActivity.class);
@@ -291,6 +297,9 @@ public class HomeActivity extends AppCompatActivity
                             intent.putExtra("png",pngResult);
                             intent.putExtra("jpeg",jpegResult);
                             intent.putExtra("pdf",pdfResult);
+
+                            intent.putExtra("formato1",formato1);
+                            intent.putExtra("formato2",formato2);
 
                             startActivity(intent);
                         }else{
@@ -374,6 +383,10 @@ public class HomeActivity extends AppCompatActivity
                         pdfResult = jsonResponse.getString("pdf");
 
 
+                        formato1 = jsonResponse.getString("formato1");
+                        formato2 = jsonResponse.getString("formato2");
+
+
 
                         Intent intent = new Intent(HomeActivity.this, ContainerActivity.class);
 
@@ -409,6 +422,9 @@ public class HomeActivity extends AppCompatActivity
                         intent.putExtra("png",pngResult);
                         intent.putExtra("jpeg",jpegResult);
                         intent.putExtra("pdf",pdfResult);
+
+                        intent.putExtra("formato1",formato1);
+                        intent.putExtra("formato2",formato2);
 
                         startActivity(intent);
                     }else{

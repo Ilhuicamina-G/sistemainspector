@@ -58,6 +58,9 @@ public class ContainerActivity extends AppCompatActivity {
     private String jpegResult = "";
     private String pdfResult = "";
 
+    private String formato1 = "";
+    private String formato2 = "";
+
     final private int REQUEST_CODE_ASK_PERMISSION=111;
 
     @Override
@@ -108,6 +111,9 @@ public class ContainerActivity extends AppCompatActivity {
         jpegResult = intentfrag.getStringExtra("jpeg");
         pdfResult = intentfrag.getStringExtra("pdf");
 
+        formato1 = intentfrag.getStringExtra("formato1");
+        formato2 = intentfrag.getStringExtra("formato2");
+
 
 
         Bundle bundle = new Bundle();
@@ -149,6 +155,9 @@ public class ContainerActivity extends AppCompatActivity {
         bundle.putString("png", pngResult);
         bundle.putString("jpeg", jpegResult);
         bundle.putString("pdf", pdfResult);
+
+        bundle.putString("formato1", formato1);
+        bundle.putString("formato2", formato2);
 
         comercianteFragment.setArguments(bundle);
         mapFragment.setArguments(bundle);
