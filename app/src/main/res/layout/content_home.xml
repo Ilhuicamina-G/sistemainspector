@@ -96,7 +96,10 @@
                     android:layout_weight="0."
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="40dp">
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="0dp">
 
 
                     <LinearLayout
@@ -140,11 +143,21 @@
                         android:theme="@style/RaisedButtonDark"
                         android:onClick="goSearchFolio"/>
 
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/escaner"/>
-
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="58dp">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/loading_indicator"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="inspeccion.json"
+                        app:lottie_loop="true"
+                        android:foregroundGravity="center"
+                        />
+                    </RelativeLayout>
 
                 </LinearLayout>
 
