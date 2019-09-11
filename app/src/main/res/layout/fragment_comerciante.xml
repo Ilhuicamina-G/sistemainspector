@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+tools:context=".view.fragment.ComercianteFragment">
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarComerciante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:statusBarScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="170dp"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center|top"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/userNameComerciante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/nav_header_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/textsize_usernamecomerciante"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textvigencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textvigencia"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/textsize_vigenciacomerciante"
+                        android:layout_marginRight="5dp"/>
+                    <TextView
+                        android:id="@+id/vigenciaComerciante"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textvigenciaComerciante"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/textsize_vigenciacomerciante"/>
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <include layout="@layout/comerciante"/>
+
+
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewFotoComerciante"
+        android:layout_width="@dimen/dimen_circleimagecomerciante"
+        android:layout_height="@dimen/dimen_circleimagecomerciante"
+        android:src="@drawable/fondo"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/margintop_circleimagecomerciante"
+        android:elevation="@dimen/elevation_circelimagecomerciante"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="5dp"
+        app:layout_behavior="com.zoonref.SimpleViewBehavior"
+        app:dependsOn="@+id/appBarComerciante"
+        app:dependType="y"
+        app:dependTargetY="@dimen/limitY_circleimage"
+        app:targetX="@dimen/activity_horizontal_margin"
+        app:targetY="@dimen/margintoptoolbar_circleimagecomerciante"
+        app:targetWidth="@dimen/width_circleimagetoolbar"
+        app:targetHeight="@dimen/width_circleimagetoolbar"/>
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/usernameToolbarComerciante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre Comerciante"
+        android:textSize="@dimen/textsize_usernametoolbarcomerciante"
+        android:elevation="@dimen/elevation_circelimagecomerciante"
+        android:layout_marginLeft="@dimen/marginleft_usernametoolbarcomerciante"
+        android:layout_marginTop="@dimen/margintop_usernametoolbarcomerciante"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:alpha="0"
+        app:layout_behavior="com.zoonref.SimpleViewBehavior"
+        app:dependsOn="@+id/appBarComerciante"
+        app:dependType="y"
+        app:dependTargetY="@dimen/limitY_usernametoolbarcomerciante"
+        app:targetY="@dimen/margintoptargety_usernametoolbarcomerciante"
+        app:targetAlpha="1"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

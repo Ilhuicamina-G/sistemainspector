@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="opciones">
+        <item>Todo en Orden</item>
+        <item>Fuera de horario</item>
+        <item>Reincidencia</item>
+        <item>Fuera de zona</item>
+        <item>No cuenta con permiso</item>
+        <item>Estado de ebriedad</item>
+        <item>Invadir banqueta</item>
+        <item>Hacer caso omiso a las recomendaciones</item>
+        <item>Amenazas y/o insulto a la autoridad</item>
+        <item>Otro</item>
+    </string-array>
+    
+</resources>

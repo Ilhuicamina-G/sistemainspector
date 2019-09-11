@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zoonref:simple-view-behavior:1.0@aar">
+    <CLASSES>
+<<<<<<< HEAD
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4ab18a1228b040f6dfa527ad450f17e9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4ab18a1228b040f6dfa527ad450f17e9/res" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff5c3d9845ffd0971185d3cc2001aa48/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff5c3d9845ffd0971185d3cc2001aa48/jars/classes.jar!/" />
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zoonref/simple-view-behavior/1.0/f1264381d083a580931b05f20094d054634d9bb8/simple-view-behavior-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
