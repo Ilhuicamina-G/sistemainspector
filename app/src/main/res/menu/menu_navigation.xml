@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/inicio"
+        android:title="Inicio"
+        android:icon="@drawable/home_white"/>
+
+    <item android:id="@+id/mapaItem"
+        android:title="Mapa"
+        android:icon="@drawable/ic_map"/>
+
+    <item android:id="@+id/comercianteItem"
+        android:title="Comerciante"
+        android:icon="@drawable/ic_comerciante"/>
+
+    <item android:id="@+id/reportesItem"
+        android:title="Reportes"
+        android:icon="@drawable/ic_report"/>
+
+</menu>
