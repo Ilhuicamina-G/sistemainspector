@@ -1,17 +1,24 @@
 package artbot.com.sistemainspector;
 
 import android.content.Context;
+<<<<<<< HEAD
 import android.content.DialogInterface;
+=======
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+=======
+import android.view.View;
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -38,17 +45,23 @@ public class LoginActivity extends AppCompatActivity {
     private String nivelResult = "";
     private String imgResult = "";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
     private String email;
     private String pass;
 
     private RadioButton RBsesion;
     private boolean isActivateRadioButton;
 
+<<<<<<< HEAD
     //contador
 
     private int contador = 0;
     private EditText editText;
+=======
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
 
 
     @Override
@@ -56,8 +69,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
         if (obtenerEstadoyDatos()){
             SharedPreferences preferences = getSharedPreferences("USER", Context.MODE_PRIVATE);
 
@@ -188,6 +204,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
     public void verificaiconURL(View view){
 
         contador++;
@@ -228,4 +245,6 @@ public class LoginActivity extends AppCompatActivity {
         return builder.show();
     }
 
+=======
+>>>>>>> 966b8603b9e9174663a365023da46bb9383b8965
 }
